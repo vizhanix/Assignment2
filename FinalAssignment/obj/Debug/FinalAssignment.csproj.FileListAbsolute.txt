@@ -1,0 +1,12 @@
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\bin\Debug\FinalAssignment.exe.config
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\bin\Debug\FinalAssignment.exe
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\bin\Debug\FinalAssignment.pdb
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.Properties.Resources.resources
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.csproj.GenerateResource.cache
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.exe
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.pdb
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.Form1.resources
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.NewFile.resources
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.csproj.CopyComplete
