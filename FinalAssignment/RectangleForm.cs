@@ -26,9 +26,7 @@ namespace FinalAssignment
         
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-            MessageBox.Show(this.a + " " + this.b + " " + this.c + " " + this.d + "New Values");
+        { 
 
             Graphics g = panel1.CreateGraphics();
             Brush red = new SolidBrush(Color.Red);
