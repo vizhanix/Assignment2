@@ -16,6 +16,16 @@ namespace FinalAssignment
                return new RectangleMediator();
             }
 
+            if ((shapeType.Equals("circle", StringComparison.InvariantCultureIgnoreCase)) == true)
+            {
+                return new CircleMediator();
+            }
+
+            if ((shapeType.Equals("triangle", StringComparison.InvariantCultureIgnoreCase)) == true)
+            {
+                return new TriangleMediator();
+            }
+
             return null;
         }
     }

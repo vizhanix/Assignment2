@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FinalAssignment
 {
-    class RectangleMediator : Shape
+    class TriangleMediator : Shape
     {
-
-        int a, b, c, d;
+        int a, b, c, d,e,f;
 
         public void draw(int a, int b, int c, int d,int e,int f)
         {
@@ -19,10 +17,10 @@ namespace FinalAssignment
             this.b = b;
             this.c = c;
             this.d = d;
-           
-            // MessageBox.Show(this.a + " " + this.b + " " + this.c + " " + this.d + "On Mediator");
+            this.e = e;
+            this.f = f;
 
-            RectangleForm recform = new RectangleForm(a, b, c, d);
+            TriangleForm recform = new TriangleForm(a, b, c, d,e,f);
             recform.Show();
 
         }

@@ -26,14 +26,7 @@ public partial class NewFile : Form
 
     private void textEditorControl1_Load(object sender, EventArgs e)
     {
-        string dric = Application.StartupPath;
-        FileSyntaxModeProvider fsmp;
-        if (Directory.Exists(dric))
-        {
-            fsmp = new FileSyntaxModeProvider(dric);
-            HighlightingManager.Manager.AddSyntaxModeFileProvider(fsmp);
-            textEditorControl1.SetHighlighting("C#");
-        }
+      
 
     }
 
@@ -61,26 +54,83 @@ public partial class NewFile : Form
                             int p2 = Convert.ToInt32(param[1]);
                             int p3 = Convert.ToInt32(param[2]);
                             int p4 = Convert.ToInt32(param[3]);
-                            // MessageBox.Show("Draw rectangle with parameter" + parameter1 + "and" + parameter2);
-
+                            
                             ShapeFactory shapeFactory = new ShapeFactory();
-                            Shape shape2 = shapeFactory.GetShape("rectangle");
-                            shape2.draw(p1, p2, p3, p4);                     
+                            Shape shape1 = shapeFactory.GetShape("rectangle");
+                            shape1.draw(p1, p2, p3, p4,0,0);                     
 
                             
                         }
                         catch (Exception)
                         {
-                           
+                            
                         }
                     }
-              
-                    else
+
+                   else if (syntax[1].Equals("circle"))
                     {
-                        MessageBox.Show("Invalid Command Executed");
+                        if (param.Length != 4)
+                        {
+                            MessageBox.Show("Parameters Not Enough");
+                        }
+                        try
+                        {
+                            int p1 = Convert.ToInt32(param[0]);
+                            int p2 = Convert.ToInt32(param[1]);
+                            int p3 = Convert.ToInt32(param[2]);
+                            int p4 = Convert.ToInt32(param[3]);
+
+                            // MessageBox.Show("Draw rectangle with parameter" + parameter1 + "and" + parameter2);
+
+                            ShapeFactory shapeFactory = new ShapeFactory();
+                            Shape shape2 = shapeFactory.GetShape("circle");
+                            shape2.draw(p1, p2, p3, p4,0,0);
+
+
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+
+                    else if (syntax[1].Equals("triangle"))
+                    {
+                        if (param.Length != 6)
+                        {
+                            MessageBox.Show("Parameters Not Enough");
+                        }
+                        try
+                        {
+                            int p1 = Convert.ToInt32(param[0]);
+                            int p2 = Convert.ToInt32(param[1]);
+                            int p3 = Convert.ToInt32(param[2]);
+                            int p4 = Convert.ToInt32(param[3]);
+                            int p5 = Convert.ToInt32(param[4]);
+                            int p6 = Convert.ToInt32(param[5]);
+
+                            // MessageBox.Show("Draw rectangle with parameter" + parameter1 + "and" + parameter2);
+
+                            ShapeFactory shapeFactory = new ShapeFactory();                            
+                            Shape shape3 = shapeFactory.GetShape("triangle");                            
+                            shape3.draw(p1, p2, p3, p4,p5,p6);
+
+
+                        }
+                        catch (Exception)
+                        {
+
+                        }
                     }
 
 
+
+                    else
+                    {
+
+                        MessageBox.Show("Invalid Graphics Command!");
+
+                    }
                 }
                 catch (Exception)
                 {
@@ -88,8 +138,21 @@ public partial class NewFile : Form
                 }
             } else
                 {
-                MessageBox.Show("Invalid Commands Executed outer");
+                MessageBox.Show("No Such Command, Please Try Again!!!");
             }
+        }
+
+        private void textEditorControl1_Load_1(object sender, EventArgs e)
+        {
+            string dric = Application.StartupPath;
+            FileSyntaxModeProvider fsmp;
+            if (Directory.Exists(dric))
+            {
+                fsmp = new FileSyntaxModeProvider(dric);
+                HighlightingManager.Manager.AddSyntaxModeFileProvider(fsmp);
+                textEditorControl1.SetHighlighting("C#");
+            }
+
         }
     }
 }

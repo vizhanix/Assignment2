@@ -50,6 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CircleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CircleForm.Designer.cs">
+      <DependentUpon>CircleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CircleMediator.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +80,16 @@
     <Compile Include="RectangleMediator.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="ShapeFactory.cs" />
+    <Compile Include="TriangleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TriangleForm.Designer.cs">
+      <DependentUpon>TriangleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TriangleMediator.cs" />
+    <EmbeddedResource Include="CircleForm.resx">
+      <DependentUpon>CircleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="RectangleForm.resx">
       <DependentUpon>RectangleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TriangleForm.resx">
+      <DependentUpon>TriangleForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

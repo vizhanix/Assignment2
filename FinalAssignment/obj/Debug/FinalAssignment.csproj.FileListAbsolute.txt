@@ -11,3 +11,5 @@ C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssign
 C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.NewFile.resources
 C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.csproj.CopyComplete
 C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.RectangleForm.resources
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.CircleForm.resources
+C:\Users\Dell\source\repos\FinalAssignment\FinalAssignment\obj\Debug\FinalAssignment.TriangleForm.resources

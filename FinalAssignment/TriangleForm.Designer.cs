@@ -1,6 +1,6 @@
 ﻿namespace FinalAssignment
 {
-    partial class RectangleForm
+    partial class TriangleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,24 +33,21 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(9, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(938, 561);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // RectangleForm
+            // TriangleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(958, 580);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "RectangleForm";
-            this.Text = "RectangleForm";
-            this.Load += new System.EventHandler(this.RectangleForm_Load);
+            this.Name = "TriangleForm";
+            this.Text = "TriangleForm";
+            this.Load += new System.EventHandler(this.TriangleForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TriangleForm_Paint);
             this.ResumeLayout(false);
 
         }
