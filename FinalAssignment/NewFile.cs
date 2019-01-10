@@ -154,6 +154,24 @@ public partial class NewFile : Form
             }
 
         }
+
+        public void copyText(string abc)
+        {
+            textEditorControl1.Text = abc;
+        }
+
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            if(save.ShowDialog()== DialogResult.OK)
+            {
+                using (Stream s = File.Open(save.FileName, FileMode.CreateNew))
+                using (StreamWriter sw = new StreamWriter(s))
+                {
+                    sw.Write(textEditorControl1.Text);
+                }
+            }
+        }
     }
 }
            
