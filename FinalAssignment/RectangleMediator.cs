@@ -9,8 +9,9 @@ namespace FinalAssignment
 {
     class RectangleMediator : Shape
     {
-
-        int a, b, c, d;
+        
+        int a, b, c, d, gh,hg;
+        string fj;
 
         public void draw(int a, int b, int c, int d,int e,int f)
         {
@@ -23,6 +24,17 @@ namespace FinalAssignment
             // MessageBox.Show(this.a + " " + this.b + " " + this.c + " " + this.d + "On Mediator");
 
             RectangleForm recform = new RectangleForm(a, b, c, d);
+            recform.Show();
+
+        }
+
+        public void repeatParam(int a, string b, int c)
+        {
+            this.gh = a; //repeat value
+            this.hg = c; //increase value
+            this.fj = b; //operator
+
+            RectangleForm recform = new RectangleForm(gh,fj,hg);
             recform.Show();
 
         }

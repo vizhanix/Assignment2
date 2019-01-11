@@ -8,7 +8,8 @@ namespace FinalAssignment
 {
     class TriangleMediator : Shape
     {
-        int a, b, c, d,e,f;
+        int a, b, c, d,e, f ,gh,hg;
+        string fj;
 
         public void draw(int a, int b, int c, int d,int e,int f)
         {
@@ -23,6 +24,16 @@ namespace FinalAssignment
             TriangleForm recform = new TriangleForm(a, b, c, d,e,f);
             recform.Show();
 
+        }
+
+        public void repeatParam(int a, string b, int c)
+        {
+            this.gh = a; //repeat value
+            this.hg = c; //increase value
+            this.fj = b; //operator
+
+            TriangleForm recform = new TriangleForm(gh, fj, hg);
+            recform.Show();
         }
     }
 }

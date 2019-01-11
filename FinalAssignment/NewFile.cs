@@ -14,7 +14,10 @@ namespace FinalAssignment
 {
 public partial class NewFile : Form
 {
-    public NewFile()
+
+        int repeatValue;
+
+        public NewFile()
     {
         InitializeComponent();
     }
@@ -122,9 +125,6 @@ public partial class NewFile : Form
 
                         }
                     }
-
-
-
                     else
                     {
 
@@ -136,10 +136,137 @@ public partial class NewFile : Form
                 {
                     MessageBox.Show("Invalid Draw Command Executed");
                 }
-            } else
+            } /*else
                 {
                 MessageBox.Show("No Such Command, Please Try Again!!!");
+            }*/
+
+
+            if (syntax[0].Equals("repeat"))
+            {
+                try
+                {
+                    repeatValue = Convert.ToInt32(syntax[1]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Loop Value Incorrect");
+                }
+                try
+                {
+
+
+
+                    if (syntax[2].Equals("rectangle"))
+                    {                     
+                        
+                        string operatorValue = syntax[3];
+
+                        if(operatorValue != "+" && operatorValue != "-")
+                        {
+                            MessageBox.Show("Operator Sign Incorrect");
+                        }
+                       
+                        try
+                        {
+                            int increaseValue = Convert.ToInt32(syntax[4]);
+
+                          ShapeFactory shapeFactory = new ShapeFactory();
+                          Shape shape4 = shapeFactory.GetShape("rectangle");
+                          shape4.repeatParam(repeatValue, operatorValue, increaseValue);
+
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Integer Value Incorrect");
+                        }
+                    }
+
+
+
+                    else if (syntax[2].Equals("circle"))
+                    {
+
+                        string operatorValue = syntax[3];
+
+                        if (operatorValue != "+" && operatorValue != "-")
+                        {
+                            MessageBox.Show("Operator Sign Incorrect");
+                        }
+
+                        try
+                        {
+                            int increaseValue = Convert.ToInt32(syntax[4]);
+
+                            ShapeFactory shapeFactory = new ShapeFactory();
+                            Shape shape5 = shapeFactory.GetShape("circle");
+                            shape5.repeatParam(repeatValue, operatorValue, increaseValue);
+
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Integer Value Incorrect");
+                        }
+                    }
+
+
+
+
+                    else if (syntax[2].Equals("triangle"))
+                    {
+
+                        string operatorValue = syntax[3];
+
+                        if (operatorValue != "+" && operatorValue != "-")
+                        {
+                            MessageBox.Show("Operator Sign Incorrect");
+                        }
+
+                        try
+                        {
+                            int increaseValue = Convert.ToInt32(syntax[4]);
+
+                            ShapeFactory shapeFactory = new ShapeFactory();
+                            Shape shape6 = shapeFactory.GetShape("triangle");
+                            shape6.repeatParam(repeatValue, operatorValue, increaseValue);
+
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Integer Value Incorrect");
+                        }
+                    }
+
+
+
+
+                    else
+                    {
+                        MessageBox.Show("Invalid Repeat Command!");
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid Repeat Command Executed");
+                }
+
             }
+
+
+
+
         }
 
         private void textEditorControl1_Load_1(object sender, EventArgs e)

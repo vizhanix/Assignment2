@@ -8,7 +8,8 @@ namespace FinalAssignment
 {
     class CircleMediator : Shape
     {
-        int a, b, c, d;
+        int a, b, c, d ,gh,hg;
+        string fj;
 
         public void draw(int a, int b, int c, int d,int e,int f)
         {
@@ -23,6 +24,16 @@ namespace FinalAssignment
             CircleForm recform = new CircleForm(a, b, c, d);
             recform.Show();
 
+        }
+
+        public void repeatParam(int a, string b, int c)
+        {
+            this.gh = a; //repeat value
+            this.hg = c; //increase value
+            this.fj = b; //operator
+
+            CircleForm recform = new CircleForm(gh, fj, hg);
+            recform.Show();
         }
     }
 }

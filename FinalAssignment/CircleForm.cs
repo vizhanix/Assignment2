@@ -13,7 +13,9 @@ namespace FinalAssignment
     public partial class CircleForm : Form
     {
 
-        int a, b, c, d;
+        int a, b, c, d, gh, hg;
+        string fj;
+        bool count = false;
 
         public CircleForm(int a, int b, int c, int d)
         {
@@ -24,13 +26,63 @@ namespace FinalAssignment
             this.d = d;
         }
 
+        public CircleForm(int a, string b, int c)
+        {
+            count = true;
+            InitializeComponent();
+            this.gh = a; //repeat value
+            this.hg = c; //increase value
+            this.fj = b; //operator
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = panel1.CreateGraphics();
             Brush red = new SolidBrush(Color.Red);
             Pen redPen = new Pen(red, 8);
 
-            g.DrawEllipse(redPen, this.a, this.b, this.c, this.d);
+            if(count == false)
+            {
+
+                g.DrawEllipse(redPen, this.a, this.b, this.c, this.d);
+            }
+
+            else
+            {
+                this.a = 100;
+                this.b = 150;
+                this.c = 60;
+                this.d = 60;
+
+                if (fj == "+")
+                {
+                    for (int i = 0; i < gh; i++)
+                    {
+                        g.DrawEllipse(redPen, this.a, this.b, this.c, this.d);
+
+                        this.a += 20;
+                        this.b += 20;
+                        this.c += hg;
+                        this.d += hg;
+
+                    }
+                }
+
+                else if (fj == "-")
+                {
+                    for (int i = gh; i > 0; i--)
+                    {
+                        g.DrawEllipse(redPen, this.a, this.b, this.c, this.d);
+
+                        this.a -= 20;
+                        this.b -= 20;
+                        this.c -= hg;
+                        this.d -= hg;
+
+                    }
+                }
+            }
+
         }
     }
 }
