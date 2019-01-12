@@ -29,9 +29,19 @@ namespace FinalAssignment
 
         }
 
-        public void repeatParam(int a, string b, int c)
+        public void ifParam(int a, int b, int c, int d, int e,int f,int counterValue)
         {
             throw new NotImplementedException();
+        }
+
+        public void repeatParam(int a, string b, int c)
+        {
+            this.gh = a; //repeat value
+            this.hg = c; //increase value
+            this.fj = b; //operator
+
+           PolygonForm recform = new PolygonForm(gh, fj, hg);
+            recform.Show();
         }
     }
 }

@@ -13,9 +13,10 @@ namespace FinalAssignment
     public partial class CircleForm : Form
     {
 
-        int a, b, c, d, gh, hg;
+        int a, b, c, d, gh, hg, counter;
         string fj;
         bool count = false;
+        string counterExist = "no";
 
         public CircleForm(int a, int b, int c, int d)
         {
@@ -35,13 +36,32 @@ namespace FinalAssignment
             this.fj = b; //operator
         }
 
+        public CircleForm(int a, int b, int c, int d, int counterValue)
+        {
+
+            InitializeComponent();
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            this.d = d;
+            this.counter = counterValue;
+            counterExist = "yes";
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = panel1.CreateGraphics();
             Brush red = new SolidBrush(Color.Red);
             Pen redPen = new Pen(red, 8);
 
-            if(count == false)
+            if (counterExist == "yes")
+            {
+                g.DrawEllipse(redPen, this.a, this.b, this.c, this.d);
+
+                g.DrawEllipse(redPen, this.a, this.b, this.c + counter, this.d + counter);
+            }
+
+            if (count == false)
             {
 
                 g.DrawEllipse(redPen, this.a, this.b, this.c, this.d);

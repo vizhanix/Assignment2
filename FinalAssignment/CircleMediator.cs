@@ -26,6 +26,16 @@ namespace FinalAssignment
 
         }
 
+        public void ifParam(int a, int b, int c, int d,int e,int f, int counterValue)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            this.d = d;
+            CircleForm recform = new CircleForm(a, b, c, d, counterValue);
+            recform.Show();
+        }
+
         public void repeatParam(int a, string b, int c)
         {
             this.gh = a; //repeat value

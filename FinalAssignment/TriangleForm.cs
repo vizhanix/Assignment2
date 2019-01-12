@@ -13,9 +13,10 @@ namespace FinalAssignment
     public partial class TriangleForm : Form
     {
 
-        int a, b, c, d, ce, f, gh, hg;
+        int a, b, c, d, ce, f, gh, hg,counter;
         string fj;
         bool count = false;
+        string counterExist = "no";
 
         public TriangleForm(int a, int b, int c, int d, int e, int f)
         {
@@ -37,6 +38,21 @@ namespace FinalAssignment
             this.fj = b; //operator
         }
 
+
+        public TriangleForm(int a, int b, int c, int d, int e,int f,int counterValue)
+        {
+
+            InitializeComponent();
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            this.d = d;
+            this.ce = e;
+            this.f = f;
+            this.counter = counterValue;
+            counterExist = "yes";
+        }
+
         private void TriangleForm_Load(object sender, EventArgs e)
         {
 
@@ -48,6 +64,17 @@ namespace FinalAssignment
             Graphics g = panel1.CreateGraphics();
             Brush red = new SolidBrush(Color.Red);
             Pen redPen = new Pen(red, 8);
+
+            if (counterExist == "yes")
+            {
+
+                Point[] points = { new Point(this.a, this.b), new Point(this.c, this.d), new Point(this.ce, this.f) };
+                g.DrawPolygon(redPen, points);
+
+                Point[] points1 = { new Point(this.a + counter, this.b + counter), new Point(this.c + counter, this.d + counter), new Point(this.ce + counter, this.f + counter) };
+                g.DrawPolygon(redPen, points1);
+
+            }
 
             if (count == false)
             {
