@@ -16,6 +16,7 @@ public partial class NewFile : Form
 {
 
         int repeatValue;
+        string[] param;
 
         public NewFile()
     {
@@ -35,7 +36,7 @@ public partial class NewFile : Form
 
     private void runToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        //draw rectangle 20,20
+        
         String command = textEditorControl1.Text;
         string[] syntax = command.Split(' ');
 
@@ -43,14 +44,20 @@ public partial class NewFile : Form
         {
                 try
                 {
-                    string[] param = syntax[2].Split(',');
+                   param = syntax[2].Split(',');
 
                     if (syntax[1].Equals("rectangle"))
                     {
-                        if(param.Length != 4)
+                        if(checkParam(param,"rectangle") == false)
                         {
                             MessageBox.Show("Parameters Not Enough");
                         }
+
+                        if(checkParamValue(param) == true)
+                        {
+                            MessageBox.Show("Parameters Not Valid");
+                        }
+
                         try
                         {
                             int p1 = Convert.ToInt32(param[0]);
@@ -60,7 +67,7 @@ public partial class NewFile : Form
                             
                             ShapeFactory shapeFactory = new ShapeFactory();
                             Shape shape1 = shapeFactory.GetShape("rectangle");
-                            shape1.draw(p1, p2, p3, p4,0,0);                     
+                            shape1.draw(p1, p2, p3, p4,0,0,0,0,0,0);                     
 
                             
                         }
@@ -72,10 +79,16 @@ public partial class NewFile : Form
 
                    else if (syntax[1].Equals("circle"))
                     {
-                        if (param.Length != 4)
+                        if (checkParam(param, "circle") == false)
                         {
                             MessageBox.Show("Parameters Not Enough");
                         }
+
+                        if (checkParamValue(param) == true)
+                        {
+                            MessageBox.Show("Parameters Not Valid");
+                        }
+
                         try
                         {
                             int p1 = Convert.ToInt32(param[0]);
@@ -87,7 +100,7 @@ public partial class NewFile : Form
 
                             ShapeFactory shapeFactory = new ShapeFactory();
                             Shape shape2 = shapeFactory.GetShape("circle");
-                            shape2.draw(p1, p2, p3, p4,0,0);
+                            shape2.draw(p1, p2, p3, p4,0,0,0,0,0,0);
 
 
                         }
@@ -99,10 +112,16 @@ public partial class NewFile : Form
 
                     else if (syntax[1].Equals("triangle"))
                     {
-                        if (param.Length != 6)
+                        if (checkParam(param, "triangle") == false)
                         {
                             MessageBox.Show("Parameters Not Enough");
                         }
+
+                        if (checkParamValue(param) == true)
+                        {
+                            MessageBox.Show("Parameters Not Valid");
+                        }
+
                         try
                         {
                             int p1 = Convert.ToInt32(param[0]);
@@ -116,7 +135,7 @@ public partial class NewFile : Form
 
                             ShapeFactory shapeFactory = new ShapeFactory();                            
                             Shape shape3 = shapeFactory.GetShape("triangle");                            
-                            shape3.draw(p1, p2, p3, p4,p5,p6);
+                            shape3.draw(p1, p2, p3, p4,p5,p6,0,0,0,0);
 
 
                         }
@@ -125,6 +144,47 @@ public partial class NewFile : Form
 
                         }
                     }
+
+                    else if (syntax[1].Equals("polygon"))
+                    {
+                        if (checkParam(param, "polygon") == false)
+                        {
+                            MessageBox.Show("Parameters Not Enough");
+                        }
+
+                        if (checkParamValue(param) == true)
+                        {
+                            MessageBox.Show("Parameters Not Valid");
+                        }
+
+                        try
+                        {
+                            int p1 = Convert.ToInt32(param[0]);
+                            int p2 = Convert.ToInt32(param[1]);
+                            int p3 = Convert.ToInt32(param[2]);
+                            int p4 = Convert.ToInt32(param[3]);
+                            int p5 = Convert.ToInt32(param[4]);
+                            int p6 = Convert.ToInt32(param[5]);
+                            int p7 = Convert.ToInt32(param[6]);
+                            int p8 = Convert.ToInt32(param[7]);
+                            int p9 = Convert.ToInt32(param[8]);
+                            int p10 = Convert.ToInt32(param[9]);
+
+                            // MessageBox.Show("Draw rectangle with parameter" + parameter1 + "and" + parameter2);
+
+                            ShapeFactory shapeFactory = new ShapeFactory();
+                            Shape shape7 = shapeFactory.GetShape("polygon");
+                            shape7.draw(p1, p2, p3, p4, p5, p6,p7,p8,p9,p10);
+
+
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+
+
                     else
                     {
 
@@ -153,9 +213,7 @@ public partial class NewFile : Form
                     MessageBox.Show("Loop Value Incorrect");
                 }
                 try
-                {
-
-
+                { 
 
                     if (syntax[2].Equals("rectangle"))
                     {                     
@@ -244,29 +302,61 @@ public partial class NewFile : Form
                     {
                         MessageBox.Show("Invalid Repeat Command!");
                     }
-
-
-
-
-
-
-
-
-
-
-
-
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Invalid Repeat Command Executed");
                 }
+            }
+        }
 
+
+        public Boolean checkParam(string[] param,string value)
+        {
+            if(param.Length == 4 && value == "rectangle")
+            {
+                return true;
             }
 
+            else if (param.Length == 4 && value == "circle")
+            {
+                return true;
+            }
 
+            else if (param.Length == 6 && value == "triangle")
+            {
+                return true;
+            }
 
+            else if (param.Length == 10 && value == "polygon")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
+        public Boolean checkParamValue(string[] param)
+        {
+            int[] values = new int[50];
+            bool count = false;
+
+            for(int i = 0; i < param.Length; i++)
+            {
+                try
+                {
+                    values[i] = Convert.ToInt32(param[i]);
+                }
+                catch (Exception)
+                {
+                    count = true;
+                }
+                
+            }
+
+            return count;
         }
 
         private void textEditorControl1_Load_1(object sender, EventArgs e)

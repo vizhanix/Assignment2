@@ -13,7 +13,7 @@ namespace FinalAssignment
         int a, b, c, d, gh,hg;
         string fj;
 
-        public void draw(int a, int b, int c, int d,int e,int f)
+        public void draw(int a, int b, int c, int d,int e,int f, int g, int h, int i, int j)
         {
 
             this.a = a;

@@ -26,6 +26,11 @@ namespace FinalAssignment
                 return new TriangleMediator();
             }
 
+            if ((shapeType.Equals("polygon", StringComparison.InvariantCultureIgnoreCase)) == true)
+            {
+                return new PolygonMediator();
+            }
+
             return null;
         }
     }

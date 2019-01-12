@@ -6,34 +6,32 @@ using System.Threading.Tasks;
 
 namespace FinalAssignment
 {
-    class TriangleMediator : Shape
+    class PolygonMediator : Shape
     {
-        int a, b, c, d,e, f ,gh,hg;
+        int a, b, c, d,e,f,g,h,i,j, gh, hg;
         string fj;
 
-        public void draw(int a, int b, int c, int d,int e,int f, int g, int h, int i, int j)
+        public void draw(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j)
         {
-
             this.a = a;
             this.b = b;
             this.c = c;
             this.d = d;
             this.e = e;
             this.f = f;
+            this.g = g;
+            this.h = h;
+            this.i = i;
+            this.j = j;
 
-            TriangleForm recform = new TriangleForm(a, b, c, d,e,f);
+            PolygonForm recform = new PolygonForm(a, b, c, d,e,f,g,h,i,j);
             recform.Show();
 
         }
 
         public void repeatParam(int a, string b, int c)
         {
-            this.gh = a; //repeat value
-            this.hg = c; //increase value
-            this.fj = b; //operator
-
-            TriangleForm recform = new TriangleForm(gh, fj, hg);
-            recform.Show();
+            throw new NotImplementedException();
         }
     }
 }

@@ -69,6 +69,13 @@
     <Compile Include="NewFile.Designer.cs">
       <DependentUpon>NewFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="PolygonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolygonForm.Designer.cs">
+      <DependentUpon>PolygonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolygonMediator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleForm.cs">
@@ -95,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewFile.resx">
       <DependentUpon>NewFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolygonForm.resx">
+      <DependentUpon>PolygonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
