@@ -10,14 +10,25 @@ using System.Windows.Forms;
 
 namespace FinalAssignment
 {
+
+    /// <summary>
+    /// class the is used for the display of circle shape
+    /// </summary>
     public partial class CircleForm : Form
     {
-
+        //variable declaration
         int a, b, c, d, gh, hg, counter;
         string fj;
         bool count = false;
         string counterExist = "no";
 
+        /// <summary>
+        /// constructor with 5 parameters
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
         public CircleForm(int a, int b, int c, int d)
         {
             InitializeComponent();
@@ -27,6 +38,13 @@ namespace FinalAssignment
             this.d = d;
         }
 
+
+        /// <summary>
+        /// constructor with 3 paramters
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
         public CircleForm(int a, string b, int c)
         {
             count = true;
@@ -36,6 +54,15 @@ namespace FinalAssignment
             this.fj = b; //operator
         }
 
+
+        /// <summary>
+        /// constructor with 5 parameters
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
+        /// <param name="counterValue"></param>
         public CircleForm(int a, int b, int c, int d, int counterValue)
         {
 
@@ -48,6 +75,12 @@ namespace FinalAssignment
             counterExist = "yes";
         }
 
+        /// <summary>
+        /// method that paints the shape with the given parameters to the
+        /// constructors
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = panel1.CreateGraphics();
@@ -63,7 +96,8 @@ namespace FinalAssignment
 
             if (count == false)
             {
-
+                //DrawEllipse method that draws the shape in panel in the 
+                //current form
                 g.DrawEllipse(redPen, this.a, this.b, this.c, this.d);
             }
 
@@ -74,6 +108,7 @@ namespace FinalAssignment
                 this.c = 60;
                 this.d = 60;
 
+                //checking if the operator sign is + or -
                 if (fj == "+")
                 {
                     for (int i = 0; i < gh; i++)
@@ -88,6 +123,7 @@ namespace FinalAssignment
                     }
                 }
 
+                //checking if the operator sign is + or -
                 else if (fj == "-")
                 {
                     for (int i = gh; i > 0; i--)

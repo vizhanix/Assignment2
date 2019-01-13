@@ -10,14 +10,26 @@ using System.Windows.Forms;
 
 namespace FinalAssignment
 {
+
+    /// <summary>
+    /// class that helps print the rectangle shape
+    /// </summary>
     public partial class RectangleForm : Form
     {
-
+        //variables declaration
         int a,b,c,d,gh,hg,counter;
         string fj;
         bool count = false;
         string counterExist = "no";
 
+        /// <summary>
+        /// constructor with 4 parameters to draw a regular rectangle according
+        /// to the parameters provided
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
         public RectangleForm(int a, int b, int c, int d)
         {
             InitializeComponent();
@@ -27,6 +39,14 @@ namespace FinalAssignment
             this.d = d;
         }
 
+        /// <summary>
+        /// constructor with 5 parameters
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
+        /// <param name="counterValue"></param>
         public RectangleForm(int a, int b, int c, int d,int counterValue)
         {
 
@@ -40,6 +60,13 @@ namespace FinalAssignment
         }
 
 
+        /// <summary>
+        /// constructors with the parameters that has the values
+        /// which has the info about the repeatition of the shape
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
         public RectangleForm(int a, string b, int c)
         {
             count = true;
@@ -49,6 +76,13 @@ namespace FinalAssignment
             this.fj = b; //operator
         }
         
+
+
+        /// <summary>
+        /// the paint method which paints the rectangle shape
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panel1_Paint(object sender, PaintEventArgs e)
         {           
 

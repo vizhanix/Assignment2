@@ -10,13 +10,32 @@ using System.Windows.Forms;
 
 namespace FinalAssignment
 {
+
+    /// <summary>
+    /// a class which is a form that is used to print a polygon shape 
+    /// in the panel
+    /// </summary>
     public partial class PolygonForm : Form
     {
+        //variable declaration
         int a, b, c, d,e,f,g,h,i,j, gh, hg;
         string fj;
         bool count = false;
         string counterExist = "no";
 
+        /// <summary>
+        /// constructor that takes in the parametrs to draw a polygon
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
+        /// <param name="e"></param>
+        /// <param name="f"></param>
+        /// <param name="g"></param>
+        /// <param name="h"></param>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
         public PolygonForm(int a,int b,int c,int d,int e,int f,int g,int h,int i,int j)
         {
             InitializeComponent();
@@ -32,6 +51,13 @@ namespace FinalAssignment
             this.j = j;
         }
 
+
+        /// <summary>
+        /// constructor that takes in the parametrs to draw a polygon
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
         public PolygonForm(int a, string b, int c)
         {
             count = true;
@@ -41,6 +67,13 @@ namespace FinalAssignment
             this.fj = b; //operator
         }
 
+
+        /// <summary>
+        /// a method that when the parameters are set, it draws the shape
+        /// according to the parameters provided to the panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = panel1.CreateGraphics();

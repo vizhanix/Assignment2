@@ -11,25 +11,45 @@ using System.Windows.Forms;
 
 namespace FinalAssignment
 {
+
+    /// <summary>
+    /// form class that is the front page for the application
+    /// </summary>
     public partial class Form1 : Form
     {
+
+        //default constructor
         public Form1()
         {
             InitializeComponent();
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
+
+        /// <summary>
+        /// dropdown in menu option which opens a new file to type in the code
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //newfile object creation
             NewFile obj = new NewFile();
             this.Hide();
             obj.Show();
         }
 
+        /// <summary>
+        /// method that runs when open file dropdown option is clicked 
+        /// a new text file is read when done that with help of a dialogbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Stream myStream;

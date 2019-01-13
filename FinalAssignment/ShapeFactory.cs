@@ -7,6 +7,10 @@ using System.Windows.Forms;
 
 namespace FinalAssignment
 {
+
+    /// <summary>
+    /// a shapefactory class which returns the mediator class object 
+    /// </summary>
     class ShapeFactory
     {
         public Shape GetShape(string shapeType)

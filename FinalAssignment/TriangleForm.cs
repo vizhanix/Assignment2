@@ -10,14 +10,27 @@ using System.Windows.Forms;
 
 namespace FinalAssignment
 {
+
+    /// <summary>
+    /// form class that is used to draw the triangle shape in the panel
+    /// </summary>
     public partial class TriangleForm : Form
     {
-
+        //variables declaration  field
         int a, b, c, d, ce, f, gh, hg,counter;
         string fj;
         bool count = false;
         string counterExist = "no";
 
+        /// <summary>
+        /// constructor that takes the passed values inorder to draw the required shape
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
+        /// <param name="e"></param>
+        /// <param name="f"></param>
         public TriangleForm(int a, int b, int c, int d, int e, int f)
         {
             InitializeComponent();
@@ -29,6 +42,12 @@ namespace FinalAssignment
             this.f = f;
         }
 
+        /// <summary>
+        /// constructor that takes the passed values inorder to draw the required shape
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
         public TriangleForm(int a, string b, int c)
         {
             count = true;
@@ -38,7 +57,16 @@ namespace FinalAssignment
             this.fj = b; //operator
         }
 
-
+        /// <summary>
+        /// constructor that takes the passed values inorder to draw the required shape
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
+        /// <param name="e"></param>
+        /// <param name="f"></param>
+        /// <param name="counterValue"></param>
         public TriangleForm(int a, int b, int c, int d, int e,int f,int counterValue)
         {
 
@@ -58,6 +86,12 @@ namespace FinalAssignment
 
         }
 
+
+        /// <summary>
+        /// method that draws the triangle shape with the values in the parameter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TriangleForm_Paint(object sender, PaintEventArgs e)
         {
 

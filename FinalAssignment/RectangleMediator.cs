@@ -7,12 +7,31 @@ using System.Windows.Forms;
 
 namespace FinalAssignment
 {
+
+    /// <summary>
+    /// a rectangle shape helper class that help to pass the 
+    /// provided parameters to the form class
+    /// </summary>
     class RectangleMediator : Shape
     {
-        
+        //variables declaration
         int a, b, c, d, gh,hg;
         string fj;
 
+
+        /// <summary>
+        /// implemented draw method from the shapes interface which helps draw the shape
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
+        /// <param name="e"></param>
+        /// <param name="f"></param>
+        /// <param name="g"></param>
+        /// <param name="h"></param>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
         public void draw(int a, int b, int c, int d,int e,int f, int g, int h, int i, int j)
         {
 
